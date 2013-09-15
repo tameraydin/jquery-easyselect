@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="jQuery easySelect">
+
+	<title>jQuery easySelect</title>
+
+	<link rel="stylesheet" href="../dist/jquery.easyselect.min.css">
+
+	<script type="text/javascript" src="../lib/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../dist/jquery.easyselect.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('#languages').easySelect();
+		});
+
+	</script>
+
+</head>
+<body>
+
+	<select id="languages" multiple>
+		<option value="01">English</option>
+		<option value="02" selected>German</option>
+		<option value="03" selected>Italian</option>
+		<option value="04">Japan</option>
+		<option value="05">Portuguese</option>
+		<option value="06">Romanian</option>
+		<option value="07">Russian</option>
+		<option value="08">Spanish</option>
+		<option value="09">Turkish</option>
+	</select>
+
+</body>
+</html>

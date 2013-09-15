@@ -1,0 +1,42 @@
+/* 
+	Base Styles
+*/
+.easyselect-field-wrapper {
+	position: relative;
+}
+.easyselect-field {
+	margin: 0;
+}
+.easyselect-list-wrapper {
+	/* IE7 fix */
+	clear: left;
+}
+.easyselect-list {
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	li {
+		background: #FFF;
+		cursor: pointer;
+		display: none;
+		&.filtered {
+			display: block;
+		}
+		&.active {
+			background: #333;
+			color: #FFF;
+		}
+	}
+}
+.easyselect-box {
+	background: #999;
+	padding: 10px;
+}
+.easyselect-box-item {
+	background: #CCC;
+	cursor: pointer;
+	margin-right: 10px;
+	padding: 3px 5px;
+}
