@@ -254,11 +254,10 @@
 
 	};
 
-	$.fn.easySelect = function(options) {
+	$.fn.easySelect = function (options) {
 		return this.each(function() {
-			if ($(this).data('easySelect') === null) {
-				var plugin = new $.easySelect(this, options);
-				$(this).data('easySelect', plugin);
+			if (!$.data(this, "easySelect")) {
+				$.data(this, "easySelect", new $.easySelect(this, options));
 			}
 		});
 	};

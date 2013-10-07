@@ -131,17 +131,18 @@ describe('easySelect', function () {
 		it('accessibility keys should work (enter/esc/up/down)', function() {
 
 			select.easySelect();
-			$('.easyselect-field').val('Item').trigger('focus');
-			jQuery.event.trigger({type:'keyup', which:27});
+			var easySelectField = $('.easyselect-field');
+			easySelectField.val('Item').trigger('focus');
+			easySelectField.trigger({type:'keyup', which:27});
 			expect($('.easyselect-list li.filtered').size()).toBeLessThan(1);
 
-			$('.easyselect-field').trigger('focus');
-			jQuery.event.trigger({type:'keyup', which:40});
-			jQuery.event.trigger({type:'keyup', which:40});
-			jQuery.event.trigger({type:'keyup', which:38});
+			easySelectField.trigger('focus');
+			easySelectField.trigger({type:'keyup', which:40});
+			easySelectField.trigger({type:'keyup', which:40});
+			easySelectField.trigger({type:'keyup', which:38});
 			expect($('.easyselect-list li.active').attr('data-value')).toEqual('2');
 
-			jQuery.event.trigger({type:'keyup', which:13});
+			easySelectField.trigger({type:'keyup', which:13});
 			expect($('.easyselect-box').html()).not.toEqual('');
 			expect(select.val()).toEqual(['2']);
 
@@ -179,8 +180,9 @@ describe('easySelect', function () {
 			var select2 = $('<select multiple><option value="1" selected>a</option><option value="2">b</option></select>');
 			$('body').append(select2);
 			select2.easySelect(settings);
-			$('.easyselect-field:last').val('i');
-			jQuery.event.trigger({type:'keyup', which:49});
+			var easySelectField = $('.easyselect-field:last');
+			easySelectField.val('i');
+			easySelectField.trigger({type:'keyup', which:49});
 			expect($('#onKeyupTest').index()).toBeGreaterThan(-1);
 		});
 
