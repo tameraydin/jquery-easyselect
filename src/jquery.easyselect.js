@@ -1,13 +1,3 @@
-/*
-* jQuery easySelect - http://outofroutine.github.com/jquery-easyselect/
-*
-* Version: 0.1.0
-* Dependency: jQuery v1.4.2+
-* Author: Tamer Aydın - http://www.tamerayd.in
-* 
-* This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/.
-*/
-
 ;(function ($, window, document, undefined) {
 
 	"use strict";

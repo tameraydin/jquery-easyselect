@@ -2,7 +2,7 @@
 	"name": "easyselect",
 	"title": "jQuery easySelect",
 	"description": "A plugin to present multiple select elements in easier way.",
-	"homepage": "http://outofroutine.github.com/jquery-easyselect/",
+	"homepage": "http://tameraydin.github.com/jquery-easyselect/",
 	"keywords": [
 		"select",
 		"selectbox",
@@ -10,7 +10,7 @@
 		"autosuggest",
 		"token"
 	],
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"author": {
 		"name": "Tamer Aydin",
 		"email": "tamer.aydin@gmail.com",
