@@ -1,4 +1,4 @@
 jQuery-easySelect
 =================
 
-A plugin to present multiple select elements in easier way.
+Please check the GitHub Page for more information - http://tameraydin.github.io/jquery-easyselect/.
