@@ -75,9 +75,9 @@
         <hr>
 
         <section id="main_content">
-          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Demo</h1>
+          <h1 id="demo"><a name="jquery-easyselect" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h1>
           <div class="custom-content demo clearfix">
-          <select id="demo" multiple>
+          <select id="demoSelect" multiple>
                 <option value="01">English</option>
                 <option value="02" selected>German</option>
                 <option value="03" selected>Italian</option>
@@ -89,9 +89,9 @@
                 <option value="09">Turkish</option>
         </select>
         </div>
-          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Usage</h1>
+          <h1 id="usage"><a name="jquery-easyselect" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
           <div class="custom-content clearfix">
-            <p>Add jQuery (Requires <a href="http://blog.jquery.com/2010/02/19/jquery-142-released/" target="_blank">jQuery 1.4.2</a> or later) and plugin assets into the <code>&lt;head&gt;</code> element:</p>
+            <p>Add jQuery (requires <a href="http://blog.jquery.com/2010/02/19/jquery-142-released/" target="_blank">jQuery 1.4.2</a> or later) and plugin assets into the <code>&lt;head&gt;</code> element:</p>
             <pre><code>&lt;link href="jquery.easyselect.min.css" rel="stylesheet"&gt;
 &lt;script src="jquery-1.10.2.min.js" type="text/javascript"&gt;&lt;/script&gt;
 &lt;script src="jquery.easyselect.min.js" type="text/javascript"&gt;&lt;/script&gt;
@@ -102,7 +102,7 @@
     &lt;option&gt;bar&lt;/option&gt;
 &lt;/select&gt;
 </code></pre>
-            <p>Simply call <code>easySelect()</code> function when the DOM is ready:</p>
+            <p>Simply call <code>easySelect()</code> function on the element when the DOM is ready:</p>
 
 <pre><code>$(document).ready(function() {
     $("select").easySelect();
@@ -110,7 +110,7 @@
 </code></pre>
           </div>
 
-          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Options</h1>
+          <h1 id="options"><a name="jquery-easyselect" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h1>
 <table>
 <tr>
 <th>Property</th>
@@ -124,7 +124,7 @@
 </tr>
 <tr>
 <td>removeIcon</td>
-<td><code>&lt;span&gt;&nbsp;&#x2716;&lt;/span&gt;</code></td>
+<td><span style="white-space:nowrap;">"&lt;span&gt;&nbsp;&#x2716;&lt;/span&gt;"<span></td>
 <td>HTML code for the remove icon on selected options. (<em>string</em>)</td>
 </tr>
 <tr>
@@ -137,7 +137,7 @@
     maxOption: 5,
     removeIcon: '&lt;img src="icon.png" alt="x"&gt;'
 });</code></pre></p>
-          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Methods</h1>
+          <h1 id="methods"><a name="jquery-easyselect" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h1>
           <table>
 <tr>
 <th>Name</th>
@@ -158,12 +158,12 @@
 
         <script>
 
-          $('#demo').easySelect();
+          $('#demoSelect').easySelect();
 
-          $('#demo').show();
-          $('#demo option').on('click',function(e) {
+          $('#demoSelect').show();
+          $('#demoSelect option').on('click',function(e) {
             e.preventDefault();
-            $('#demo').data('easySelect').refresh();
+            $('#demoSelect').data('easySelect').refresh();
           });
         </script>
 
