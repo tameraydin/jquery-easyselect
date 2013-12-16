@@ -1,0 +1,117 @@
+/*! 
+	jQuery easySelect 1.0.7 - http://tameraydin.github.com/jquery-easyselect/
+*/
+
+/* 
+	Base Styles
+*/
+.easyselect-field-wrapper {
+  position: relative;
+}
+.easyselect-field {
+  margin: 0;
+}
+.easyselect-list-wrapper {
+  /* IE7 fix */
+  clear: left;
+}
+.easyselect-list {
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+.easyselect-list li {
+  background: #FFF;
+  cursor: pointer;
+  display: none;
+}
+.easyselect-list li.filtered {
+  display: block;
+}
+.easyselect-list li.active {
+  background: #333;
+  color: #FFF;
+}
+.easyselect-box {
+  background: #999;
+  padding: 10px;
+}
+.easyselect-box-item {
+  background: #CCC;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 3px 5px;
+}
+
+/* 
+	Extras
+*/
+.easyselect-container {
+  font-family: sans-serif;
+}
+.easyselect-field-wrapper {
+  z-index: 2;
+}
+.easyselect-field {
+  border: 4px solid #336699;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  padding: 4px 6px;
+  width: 300px;
+}
+.easyselect-list {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-left: 4px;
+  width: 312px;
+  z-index: 2;
+}
+.easyselect-list li {
+  border-bottom: 1px solid #EAEFFA;
+  padding: 3px 5px;
+  width: 302px;
+}
+.easyselect-list li.active {
+  background: #336699;
+}
+.easyselect-box {
+  background: #EAEFFA;
+  border-radius: 4px;
+  margin-top: 8px;
+  padding: 0 8px 8px 0;
+  position: relative;
+  width: 312px;
+  *zoom: 1;
+}
+.easyselect-box.empty {
+  display: none;
+}
+.easyselect-box:before,
+.easyselect-box:after {
+  content: "";
+  display: table;
+}
+.easyselect-box:after {
+  clear: both;
+}
+.easyselect-box-item {
+  background: #7A9BBD;
+  background: linear-gradient(to bottom, #7a9bbd 0%, #7a9bbd 50%, #336699 50%, #336699 100%);
+  background: -o-linear-gradient(top, #7a9bbd 0%, #7a9bbd 50%, #336699 50%, #336699 100%);
+  background: -ms-linear-gradient(top, #7a9bbd 0%, #7a9bbd 50%, #336699 50%, #336699 100%);
+  background: -webkit-linear-gradient(top, #7a9bbd 0%, #7a9bbd 50%, #336699 50%, #336699 100%);
+  border: 1px solid #7A9BBD;
+  border-radius: 4px;
+  color: #FFF;
+  float: left;
+  line-height: 1em;
+  margin: 8px 0 0 8px;
+  text-shadow: 0 -1px 0 #336699;
+  text-decoration: none;
+}
+.easyselect-box-item:hover {
+  border-color: #336699;
+}

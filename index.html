@@ -7,10 +7,54 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta name="keywords" content="autosuggest, multiselect, select, selectbox, token">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Jquery-easyselect by tameraydin</title>
+    <title>jQuery easySelect</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery.easyselect.min.css" media="screen" />
+    <style>
+        .easyselect-field {
+          border-color: #303030;
+        }
+        .easyselect-list li.active {
+          background: #303030; 
+        }
+        .easyselect-box-item {
+          background: #555;
+          background: linear-gradient(to bottom, #555 0%, #555 50%, #303030 50%, #303030 100%);
+          background: -o-linear-gradient(top, #555 0%, #555 50%, #303030 50%, #303030 100%);
+          background: -ms-linear-gradient(top, #555 0%, #555 50%, #303030 50%, #303030 100%);
+          background: -webkit-linear-gradient(top, #555 0%, #555 50%, #303030 50%, #303030 100%);
+          border: 1px solid #555;
+          text-shadow: 0 -1px 0 #303030;
+        }
+        .easyselect-box-item:hover {
+          border-color: #000;
+        }
+        .easyselect-container {
+          float: right;
+          text-shadow: none;
+        }
+        .easyselect-box {
+          box-shadow: 0 0 6px rgba(0,0,0,.15);
+          background: #fff;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="javascripts/jquery.easyselect.min.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46399991-1', 'tameraydin.github.io');
+  ga('send', 'pageview');
+
+</script>
   </head>
 
   <body>
@@ -18,7 +62,7 @@
       <div class="inner">
 
         <header>
-          <h1>Jquery-easyselect</h1>
+          <h1>jQuery easySelect</h1>
           <h2>A plugin to present multiple select elements in easier way.</h2>
         </header>
 
@@ -31,16 +75,97 @@
         <hr>
 
         <section id="main_content">
-          <h1>
-<a name="jquery-easyselect" class="anchor" href="#jquery-easyselect"><span class="octicon octicon-link"></span></a>jQuery-easySelect</h1>
+          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Demo</h1>
+          <div class="custom-content demo clearfix">
+          <select id="demo" multiple>
+                <option value="01">English</option>
+                <option value="02" selected>German</option>
+                <option value="03" selected>Italian</option>
+                <option value="04">Japan</option>
+                <option value="05">Portuguese</option>
+                <option value="06">Romanian</option>
+                <option value="07">Russian</option>
+                <option value="08">Spanish</option>
+                <option value="09">Turkish</option>
+        </select>
+        </div>
+          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Usage</h1>
+          <div class="custom-content clearfix">
+            <p>Add jQuery (Requires <a href="http://blog.jquery.com/2010/02/19/jquery-142-released/" target="_blank">jQuery 1.4.2</a> or later) and plugin assets into the <code>&lt;head&gt;</code> element:</p>
+            <pre><code>&lt;link href="jquery.easyselect.min.css" rel="stylesheet"&gt;
+&lt;script src="jquery-1.10.2.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="jquery.easyselect.min.js" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre>
+<p>Place your multiple select element (<code>&lt;select multiple&gt;</code>) in the HTML:</p>
+<pre><code>&lt;select multiple&gt;
+    &lt;option&gt;foo&lt;/option&gt;
+    &lt;option&gt;bar&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+            <p>Simply call <code>easySelect()</code> function when the DOM is ready:</p>
 
-<p>A plugin to present multiple select elements in easier way.</p>
+<pre><code>$(document).ready(function() {
+    $("select").easySelect();
+});
+</code></pre>
+          </div>
+
+          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Options</h1>
+<table>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>maxOption</td>
+<td>0</td>
+<td>Maximum number of selected options. (0: no limit) (<em>integer</em>)</td>
+</tr>
+<tr>
+<td>removeIcon</td>
+<td><code>&lt;span&gt;&nbsp;&#x2716;&lt;/span&gt;</code></td>
+<td>HTML code for the remove icon on selected options. (<em>string</em>)</td>
+</tr>
+<tr>
+<td>onKeyup</td>
+<td>null</td>
+<td>A function to trigger when user keyup on easySelect's input field. (<em>function</em>)</td>
+</tr>
+</table>
+<p>Sample usage: <pre><code>$('#select').easySelect({
+    maxOption: 5,
+    removeIcon: '&lt;img src="icon.png" alt="x"&gt;'
+});</code></pre></p>
+          <h1><a name="jquery-easyselect" class="anchor" href="#jdemo"><span class="octicon octicon-link"></span></a>Methods</h1>
+          <table>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>refresh</td>
+<td>Re-generates easySelect components according to current state of the select element. (<em>function</em>)</td>
+</tr>
+</table>
+<p>Sample usage: <pre><code>$('#select').data('easySelect').refresh();</code></pre></p>
         </section>
 
         <footer>
-          Jquery-easyselect is maintained by <a href="https://github.com/tameraydin">tameraydin</a><br>
+          jQuery easySelect is maintained by <a href="https://github.com/tameraydin">Tamer Aydın</a>.<br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
+
+        <script>
+
+          $('#demo').easySelect();
+
+          $('#demo').show();
+          $('#demo option').on('click',function(e) {
+            e.preventDefault();
+            $('#demo').data('easySelect').refresh();
+          });
+        </script>
 
         
       </div>
