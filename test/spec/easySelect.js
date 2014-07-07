@@ -13,18 +13,26 @@ describe('easySelect', function () {
 		}
 		$('body').append('<select id="test-select" multiple>'+options+'</select>');
 
-		this.addMatchers({
+		jasmine.addMatchers({
 
 			toBeInitialized: function() {
-				if (this.actual.next('.easyselect-container').index() < 0)
-					return;
-				if ($('.easyselect-list').index() < 0)
-					return;
-				if ($('.easyselect-box').index() < 0)
-					return;
-				if ($('.easyselect-field').index() < 0)
-					return;
-				return true;
+				return {
+					compare: function(actual) {
+						var result = {pass: false};
+
+						if ($(actual).next('.easyselect-container').index() < 0)
+							return result;
+						if ($('.easyselect-list').index() < 0)
+							return result;
+						if ($('.easyselect-box').index() < 0)
+							return result;
+						if ($('.easyselect-field').index() < 0)
+							return result;
+
+						result.pass = true;
+						return result;
+					}
+				};
 			}
 
 		});
@@ -91,16 +99,14 @@ describe('easySelect', function () {
 	describe('events', function () {
 
 		it('option list should appear as filtered when user types & dissappear when focused out', function() {
-			runs(function() {
-				select.easySelect();
-				$('.easyselect-field').val('b').trigger('focus');
-				expect($('.easyselect-list li.filtered').size()).toEqual(1);
-				$('.easyselect-field').trigger('blur');
-			});
-			waits(100);
-			runs(function() {
+			select.easySelect();
+			$('.easyselect-field').val('b').trigger('focus');
+			expect($('.easyselect-list li.filtered').size()).toEqual(1);
+			$('.easyselect-field').trigger('blur');
+
+			setTimeout(function() {
 				expect($('.easyselect-list li.filtered').size()).toEqual(0);
-			});
+			}, 100);
 		});
 
 		it('list item should be added to box when user clicks', function() {
