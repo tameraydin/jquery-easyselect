@@ -13,10 +13,11 @@
         "test": "grunt jasmine"
     },
 	"licenses": [
-		{
-			"url": "http://creativecommons.org/licenses/by/3.0/"
-		}
-	],
+    {
+      "type": "MIT",
+      "url": "http://tameraydin.mit-license.org"
+    }
+  ],
 	"dependencies" : {
 		"jquery": ">=1.4.2"
 	},
