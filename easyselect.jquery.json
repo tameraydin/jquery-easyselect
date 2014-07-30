@@ -10,18 +10,17 @@
 		"autosuggest",
 		"token"
 	],
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"author": {
 		"name": "Tamer Aydin",
 		"email": "tamer.aydin@gmail.com",
 		"url": "http://tamerayd.in"
 	},
-	"licenses": [
-		{
-			"url": "http://creativecommons.org/licenses/by/3.0/"
-		}
-	],
-	"dependencies" : {
+	"licenses": [{
+    "type": "MIT",
+    "url": "http://tameraydin.mit-license.org"
+  }],
+	"dependencies": {
 		"jquery": ">=1.4.2"
 	},
 	"devDependencies": {
