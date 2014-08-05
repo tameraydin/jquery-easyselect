@@ -97,7 +97,7 @@
 &lt;script src="jquery.easyselect.min.js" type="text/javascript"&gt;&lt;/script&gt;
 </code></pre>
 <p>Place your multiple select element (<code>&lt;select multiple&gt;</code>) in the HTML:</p>
-<pre><code>&lt;select multiple&gt;
+<pre><code>&lt;select id="foo" multiple&gt;
     &lt;option&gt;foo&lt;/option&gt;
     &lt;option&gt;bar&lt;/option&gt;
 &lt;/select&gt;
@@ -105,7 +105,7 @@
             <p>Simply call <code>easySelect()</code> function on the element when the DOM is ready:</p>
 
 <pre><code>$(document).ready(function() {
-    $("select").easySelect();
+    $("#foo").easySelect();
 });
 </code></pre>
           </div>
