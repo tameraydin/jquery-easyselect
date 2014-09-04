@@ -133,7 +133,11 @@
 			box = {
 
 				addItem: function(value) { //select the option has given value & add it to the box
-					$options.filter('[value=' + value + ']').attr('selected','selected');
+					if ($.prop) {
+						$options.filter('[value=' + value + ']').prop('selected', true);
+					} else {
+						$options.filter('[value=' + value + ']').attr('selected', 'selected');
+					}
 					$field.val('');
 					list.generate();
 				},
