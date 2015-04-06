@@ -1,0 +1,43 @@
+{
+  "name": "easyselect",
+  "description": "A plugin to present multiple select elements in easier way.",
+  "version": "1.1.1",
+  "main": [
+    "dist/jquery.easyselect.min.js",
+    "dist/jquery.easyselect.min.css"
+  ],
+  "keywords": [
+    "jquery",
+    "select",
+    "selectbox",
+    "multiselect",
+    "autosuggest",
+    "token"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tameraydin/jquery-easyselect.git"
+  },
+  "homepage": "http://tameraydin.github.io/jquery-easyselect/",
+  "authors": [
+    {
+      "name": "Tamer Aydin",
+      "homepage": "http://tamerayd.in"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.4.2"
+  },
+  "ignore": [
+    "node_modules",
+    "demo",
+    "src",
+    "lib",
+    ".gitignore",
+    ".travis.yml",
+    "Gruntfile.js",
+    "easyselect.jquery.json",
+    "package.json"
+  ]
+}
