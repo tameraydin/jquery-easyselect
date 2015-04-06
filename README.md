@@ -2,3 +2,7 @@ jQuery easySelect [![Build Status](http://img.shields.io/travis/tameraydin/jquer
 =================
 
 Please check the GitHub Page for more information - http://tameraydin.github.io/jquery-easyselect/.
+
+## License
+
+MIT [http://tameraydin.mit-license.org/](http://tameraydin.mit-license.org/)
