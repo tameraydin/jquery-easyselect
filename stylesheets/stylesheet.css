@@ -327,7 +327,7 @@ footer a:hover {
 }
 .easyselect-container:before {
   color: #ccc;
-  content: '→';
+  content: "\21E2";
   position: absolute;
   margin: -18px 0 0 -110px;
   display:block;
